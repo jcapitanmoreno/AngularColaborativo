@@ -16,7 +16,7 @@ export class ChampionService {
   }
 
   // Obtener todas las Champions
-  getCompanies(): Observable<Champion[]> {
+  getChampions(): Observable<Champion[]> {
     return collectionData(this.championCollection, { idField: 'id' }) as Observable<Champion[]>;
   }
 

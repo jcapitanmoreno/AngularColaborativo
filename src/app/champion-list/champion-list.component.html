@@ -1,0 +1,10 @@
+<section class="container mt-5">
+    <div *ngIf="!isLoading && champions.length > 0" class="row">
+      <div *ngFor="let champion of champions" class="col-md-4 text-center mb-4">
+        <div class="card p-3 shadow-sm">
+          <h3>{{ champion.nombre }}</h3>
+          <p>{{ champion.posicion }}</p>
+          <p>{{ champion.region }}</p>
+        </div>
+      </div>
+    </div>
