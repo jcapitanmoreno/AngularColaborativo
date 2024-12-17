@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData, updateDoc, doc, docData, deleteDoc, CollectionReference } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import {Firestore, collection, addDoc, updateDoc, doc, deleteDoc, CollectionReference, getDocs, getDoc} from '@angular/fire/firestore';
+import {from, Observable} from 'rxjs';
 import { Champion } from '../models/champion';
-import { inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -17,13 +16,14 @@ export class ChampionService {
 
   // Obtener todas las Champions
   getChampions(): Observable<Champion[]> {
-    return collectionData(this.championCollection, { idField: 'id' }) as Observable<Champion[]>;
+    return from(getDocs(this.championCollection).then(querySnapshot =>
+      querySnapshot.docs.map(doc => doc.data() as Champion)
+    ));
   }
 
-  // Obtener una Champion por ID
-  getChampion(id: string): Observable<Champion | undefined> {
-    const ChampionDocRef = doc(this.firestore, `loldetails/${id}`);
-    return docData(ChampionDocRef) as Observable<Champion | undefined>;
+  getChampion(id: string): Observable<Champion> {
+    const championDocRef = doc(this.firestore, 'loldetails', id);
+    return from(getDoc(championDocRef).then(docSnapshot => docSnapshot.data() as Champion));
   }
 
   // Agregar una nueva Champion
