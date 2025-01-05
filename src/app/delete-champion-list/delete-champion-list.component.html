@@ -1,0 +1,52 @@
+<section class="container mt-5">
+  <input type="text" placeholder="Buscar campeón" #filter/>
+  <button type="button" class="btn btn-primary" (click)="filterChampions(filter.value)">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+         viewBox="0 0 16 16">
+      <path
+        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+    </svg>
+    Buscar
+  </button>
+
+  <hr>
+  <div *ngIf="!isLoading && champions.length > 0" class="row">
+    <div *ngFor="let champion of filteredChampions" class="col-md-4 text-center mb-4">
+      <div class="card p-3 shadow-sm position-relative">
+        <button id="deleteButton" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#deleteModal' + champion.id" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
+               viewBox="0 0 16 16" data-darkreader-inline-fill="" style="--darkreader-inline-fill: currentColor;">
+            <path
+              d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"></path>
+          </svg>
+        </button>
+        <h3>{{ champion.nombre }}</h3>
+        <p>{{ champion.posicion }}</p>
+        <p>{{ champion.region }}</p>
+      </div>
+
+      <div class="modal fade" [attr.id]="'deleteModal' + champion.id" tabindex="-1"
+           [attr.aria-labelledby]="'deleteModalLabel' + champion.id"
+           aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Eliminar al campeón: {{ champion.nombre }}?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ¿Seguro que quieres eliminar al campeón {{ champion.nombre }}?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteChampion(champion)">
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

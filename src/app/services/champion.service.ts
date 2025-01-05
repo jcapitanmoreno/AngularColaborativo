@@ -17,7 +17,10 @@ export class ChampionService {
   // Obtener todas las Champions
   getChampions(): Observable<Champion[]> {
     return from(getDocs(this.championCollection).then(querySnapshot =>
-      querySnapshot.docs.map(doc => doc.data() as Champion)
+      querySnapshot.docs.map(doc => ({
+        ...doc.data() as Champion,
+        id: doc.id
+      }))
     ));
   }
 
