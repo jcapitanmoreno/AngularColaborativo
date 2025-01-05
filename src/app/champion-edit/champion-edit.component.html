@@ -1,0 +1,53 @@
+<form *ngIf="champion" (ngSubmit)="saveChampion()">
+  <div class="form-row">
+    <!-- Columna 1 -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="anoLanzamiento">Año de Lanzamiento:</label>
+        <input id="anoLanzamiento" [(ngModel)]="champion.anoLanzamiento" name="anoLanzamiento" class="form-control" placeholder="Ej: 2009" required />
+      </div>
+
+      <div class="form-group">
+        <label for="especie">Especie:</label>
+        <input id="especie" [(ngModel)]="champion.especie" name="especie" class="form-control" placeholder="Ej: Humano" required />
+      </div>
+
+      <div class="form-group">
+        <label for="genero">Género:</label>
+        <input id="genero" [(ngModel)]="champion.genero" name="genero" class="form-control" placeholder="Ej: Masculino/Femenino" required />
+      </div>
+
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" [(ngModel)]="champion.nombre" name="nombre" class="form-control" placeholder="Ej: Garen" required />
+      </div>
+    </div>
+
+    <!-- Columna 2 -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="posicion">Posición:</label>
+        <input id="posicion" [(ngModel)]="champion.posicion" name="posicion" class="form-control" placeholder="Ej: Top" required />
+      </div>
+
+      <div class="form-group">
+        <label for="recurso">Recurso:</label>
+        <input id="recurso" [(ngModel)]="champion.recurso" name="recurso" class="form-control" placeholder="Ej: Mana/Energía" required />
+      </div>
+
+      <div class="form-group">
+        <label for="region">Región:</label>
+        <input id="region" [(ngModel)]="champion.region" name="region" class="form-control" placeholder="Ej: Demacia" required />
+      </div>
+
+      <div class="form-group">
+        <label for="tipoAtaque">Tipo de Ataque:</label>
+        <input id="tipoAtaque" [(ngModel)]="champion.tipoAtaque" name="tipoAtaque" class="form-control" placeholder="Ej: Rango/Melee" required />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="!champion.anoLanzamiento || !champion.especie || !champion.genero || !champion.nombre || !champion.posicion || !champion.recurso || !champion.region || !champion.tipoAtaque">Guardar</button>
+  </div>
+</form>
