@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ChampionService } from '../services/champion.service';
 import { Champion } from '../models/champion';
 import { ChampionCardComponent } from '../champion-card/champion-card.component';
+import {PlaceholderComponent} from "../placeholder/placeholder.component";
 
 
 
@@ -11,15 +12,15 @@ import { ChampionCardComponent } from '../champion-card/champion-card.component'
   standalone: true,
   templateUrl: './champion-list.component.html',
   styleUrls: ['./champion-list.component.css'],
-  imports: [CommonModule, ChampionCardComponent], 
+  imports: [CommonModule, ChampionCardComponent, PlaceholderComponent],
 })
 
 export class ChampionListComponent implements OnInit {
-  champions: Champion[] = []; 
-  isLoading: boolean = true;  
+  champions: Champion[] = [];
+  isLoading: boolean = true;
 
   constructor(private championService: ChampionService) {
-    
+
   }
 
   ngOnInit(): void {

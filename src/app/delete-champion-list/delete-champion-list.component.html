@@ -10,6 +10,11 @@
   </button>
 
   <hr>
+
+  <div *ngIf="isLoading" class="text-center mt-5">
+    <app-placeholder></app-placeholder>
+  </div>
+
   <div *ngIf="!isLoading && champions.length > 0" class="row">
     <div *ngFor="let champion of filteredChampions" class="col-md-4 text-center mb-4">
       <div class="card p-3 shadow-sm position-relative">
