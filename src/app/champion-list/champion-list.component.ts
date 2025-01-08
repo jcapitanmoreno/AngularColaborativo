@@ -2,21 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChampionService } from '../services/champion.service';
 import { Champion } from '../models/champion';
+import { ChampionCardComponent } from '../champion-card/champion-card.component';
+
 
 
 @Component({
   selector: 'app-champion-list',
-  standalone: true, // Indica que es un componente standalone
+  standalone: true,
   templateUrl: './champion-list.component.html',
   styleUrls: ['./champion-list.component.css'],
-  imports: [CommonModule], // Importa CommonModule aquí
+  imports: [CommonModule, ChampionCardComponent], 
 })
 
 export class ChampionListComponent implements OnInit {
   champions: Champion[] = []; 
   isLoading: boolean = true;  
 
-  constructor(private championService: ChampionService) {}
+  constructor(private championService: ChampionService) {
+    
+  }
 
   ngOnInit(): void {
     this.getChampions();

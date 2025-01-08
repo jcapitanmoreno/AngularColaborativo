@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Firestore, collection, addDoc, updateDoc, doc, deleteDoc, CollectionReference, getDocs, getDoc} from '@angular/fire/firestore';
-import {from, Observable} from 'rxjs';
+import { Firestore, collection, addDoc, updateDoc, doc, deleteDoc, CollectionReference, getDocs, getDoc } from '@angular/fire/firestore';
+import { from, Observable, BehaviorSubject } from 'rxjs';  // Importa BehaviorSubject
 import { Champion } from '../models/champion';
 
 @Injectable({
@@ -8,13 +8,14 @@ import { Champion } from '../models/champion';
 })
 export class ChampionService {
   championCollection: CollectionReference;
-
+  private championSubject = new BehaviorSubject<Champion | null>(null);  // Almacena el champion temporalmente
+  champion$ = this.championSubject.asObservable();  // Permite observar el champion
 
   constructor(private firestore: Firestore) {
     this.championCollection = collection(this.firestore, 'loldetails');
   }
 
-  // Obtener todas las Champions
+  // Obtener todos los Champions
   getChampions(): Observable<Champion[]> {
     return from(getDocs(this.championCollection).then(querySnapshot =>
       querySnapshot.docs.map(doc => ({
@@ -24,25 +25,35 @@ export class ChampionService {
     ));
   }
 
+  // Obtener un solo Champion por ID
   getChampion(id: string): Observable<Champion> {
     const championDocRef = doc(this.firestore, 'loldetails', id);
     return from(getDoc(championDocRef).then(docSnapshot => docSnapshot.data() as Champion));
   }
 
-  // Agregar una nueva Champion
-  addChampion(Champion: Champion): Promise<void> {
-    return addDoc(this.championCollection, Champion) as unknown as Promise<void>;
+  // Agregar un nuevo Champion
+  addChampion(champion: Champion): Promise<void> {
+    return addDoc(this.championCollection, champion) as unknown as Promise<void>;
   }
 
-  // Actualizar una Champion existente
-  updateChampion(id: string, Champion: Partial<Champion>): Promise<void> {
-    const ChampionDocRef = doc(this.firestore, `loldetails/${id}`);
-    return updateDoc(ChampionDocRef, Champion) as Promise<void>;
+  // Actualizar un Champion existente
+  updateChampion(id: string, champion: Partial<Champion>): Promise<void> {
+    const championDocRef = doc(this.firestore, `loldetails/${id}`);
+    return updateDoc(championDocRef, champion) as Promise<void>;
   }
 
-  // Eliminar una Champion
+  // Eliminar un Champion
   deleteChampion(id: string): Promise<void> {
-    const ChampionDocRef = doc(this.firestore, `loldetails/${id}`);
-    return deleteDoc(ChampionDocRef) as Promise<void>;
+    const championDocRef = doc(this.firestore, `loldetails/${id}`);
+    return deleteDoc(championDocRef) as Promise<void>;
+  }
+
+
+  setChampion(champion: Champion) {
+    this.championSubject.next(champion);  // Almacena el champion
+  }
+
+  getChampionFromService(): Observable<Champion | null> {
+    return this.champion$;  // Devuelve el Observable
   }
 }
