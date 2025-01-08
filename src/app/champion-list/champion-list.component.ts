@@ -4,6 +4,7 @@ import { ChampionService } from '../services/champion.service';
 import { Champion } from '../models/champion';
 import { ChampionCardComponent } from '../champion-card/champion-card.component';
 import {PlaceholderComponent} from "../placeholder/placeholder.component";
+import {NoDataMessageComponent} from "../no-data-message/no-data-message.component";
 
 
 
@@ -12,7 +13,7 @@ import {PlaceholderComponent} from "../placeholder/placeholder.component";
   standalone: true,
   templateUrl: './champion-list.component.html',
   styleUrls: ['./champion-list.component.css'],
-  imports: [CommonModule, ChampionCardComponent, PlaceholderComponent],
+  imports: [CommonModule, ChampionCardComponent, PlaceholderComponent, NoDataMessageComponent],
 })
 
 export class ChampionListComponent implements OnInit {
