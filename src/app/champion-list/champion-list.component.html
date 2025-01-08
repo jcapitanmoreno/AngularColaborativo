@@ -12,7 +12,7 @@
   </div>
 
   <!-- Mostrar mensaje si no hay datos -->
-  <div *ngIf="!isLoading && champions.length === 0" class="text-center mt-5">
-    <p class="text-muted fs-4">No hay campeones disponibles para mostrar.</p>
+  <div *ngIf="!isLoading && champions.length === 0">
+    <app-no-data-message></app-no-data-message>
   </div>
 </section>

@@ -54,4 +54,8 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="!isLoading && champions.length === 0" class="text-center mt-5">
+    <app-no-data-message></app-no-data-message>
+  </div>
 </section>
