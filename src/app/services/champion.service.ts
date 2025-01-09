@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, updateDoc, doc, deleteDoc, CollectionReference, getDocs, getDoc } from '@angular/fire/firestore';
-import { from, Observable, BehaviorSubject } from 'rxjs';  // Importa BehaviorSubject
+import {from, Observable, BehaviorSubject, throwError, catchError, map} from 'rxjs';  // Importa BehaviorSubject
 import { Champion } from '../models/champion';
+import { ApiResponse } from '../models/ApiResponse';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChampionService {
   championCollection: CollectionReference;
+  private apiUrl = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json';
   private championSubject = new BehaviorSubject<Champion | null>(null);  // Almacena el champion temporalmente
   champion$ = this.championSubject.asObservable();  // Permite observar el champion
 
@@ -56,4 +59,36 @@ export class ChampionService {
   getChampionFromService(): Observable<Champion | null> {
     return this.champion$;  // Devuelve el Observable
   }
+
+  async getChampionImageUrl(championName: string): Promise<string> {
+    try {
+
+      const response = await fetch(this.apiUrl);
+
+
+      if (!response.ok) {
+        throw new Error('Error en la solicitud al servidor');
+      }
+
+
+      const data: ApiResponse = await response.json();
+
+
+      const championId = Object.keys(data.data).find(
+        key => data.data[key].name.toLowerCase() === championName.toLowerCase()
+      );
+
+
+      if (championId) {
+        return `https://ddragon.leagueoflegends.com/cdn/12.4.1/img/champion/${championId}.png`;
+      } else {
+        throw new Error(`No se encontró el campeón con el nombre "${championName}".`);
+      }
+    } catch (error) {
+      console.error('Error al obtener la URL de la imagen del campeón:', error);
+      throw new Error('Hubo un error al conectarse con el servidor.');
+    }
+  }
+
+
 }

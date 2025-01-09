@@ -29,7 +29,10 @@
         <h3>{{ champion.nombre }}</h3>
         <p>{{ champion.posicion }}</p>
         <p>{{ champion.region }}</p>
+        <app-champion-image [championName]="champion.nombre"></app-champion-image>
       </div>
+
+
 
       <div class="modal fade" [attr.id]="'deleteModal' + champion.id" tabindex="-1"
            [attr.aria-labelledby]="'deleteModalLabel' + champion.id"

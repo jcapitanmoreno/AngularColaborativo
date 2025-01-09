@@ -8,7 +8,7 @@ import { Champion } from '../../models/champion';
   standalone: true,
   templateUrl: './anadir-personaje.component.html',
   styleUrl: './anadir-personaje.component.css',
-  imports: [ReactiveFormsModule]  // <--- Importar aquí
+  imports: [ReactiveFormsModule]
 })
 export class AnadirPersonajeComponent {
   championForm: FormGroup;

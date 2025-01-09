@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Champion } from '../models/champion';
 import { Router } from '@angular/router';
 import {ChampionService} from "../services/champion.service";
+import {ChampionImageComponent} from "../champion-image/champion-image.component";
 
 @Component({
   selector: 'app-champion-card',
   standalone: true,
   templateUrl: './champion-card.component.html',
   styleUrls: ['./champion-card.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, ChampionImageComponent]
 })
 export class ChampionCardComponent {
   @Input() champion!: Champion;
