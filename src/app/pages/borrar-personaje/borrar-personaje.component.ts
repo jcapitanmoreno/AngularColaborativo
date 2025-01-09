@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { DeleteChampionListComponent } from "../../delete-champion-list/delete-champion-list.component";
 
+
+
 @Component({
   selector: 'app-borrar-personaje',
   standalone: true,

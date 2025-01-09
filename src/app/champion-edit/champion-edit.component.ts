@@ -19,7 +19,7 @@ export class ChampionEditComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private championService: ChampionService  // Inyecta el servicio
+    private championService: ChampionService
   ) {}
 
   ngOnInit() {
@@ -46,7 +46,6 @@ export class ChampionEditComponent implements OnInit {
 
       const updatedChampion: Partial<Champion> = {};
 
-      // Solo asignamos valores si están presentes
       if (this.champion.anoLanzamiento) {
         updatedChampion.anoLanzamiento = this.champion.anoLanzamiento;
       }
@@ -72,7 +71,7 @@ export class ChampionEditComponent implements OnInit {
         updatedChampion.tipoAtaque = this.champion.tipoAtaque;
       }
 
-      // Llamamos al servicio para actualizar el campeón con los campos no vacíos
+
       this.championService.updateChampion(this.champion.id, updatedChampion)
         .then(() => {
           console.log('Champion updated successfully');

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ChampionListComponent } from '../../champion-list/champion-list.component';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -10,5 +11,5 @@ import { ChampionListComponent } from '../../champion-list/champion-list.compone
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  
+
 }
