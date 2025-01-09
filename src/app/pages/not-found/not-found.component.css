@@ -1,0 +1,21 @@
+.container {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #6c757d;
+}
+
+p {
+  color: #495057;
+}
+
+.btn i {
+  margin-right: 5px;
+}
