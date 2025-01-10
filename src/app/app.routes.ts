@@ -4,6 +4,7 @@ import { AnadirPersonajeComponent } from './pages/anadir-personaje/anadir-person
 import { BorrarPersonajeComponent } from './pages/borrar-personaje/borrar-personaje.component';
 import { ChampionEditComponent } from './champion-edit/champion-edit.component';
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
+import {LoginGoogleComponent} from "./components/login-google/login-google.component";
 
 
 export const routes: Routes = [
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'hola-mundo', component: AnadirPersonajeComponent },
   { path: 'borrar-personaje', component: BorrarPersonajeComponent },
   { path: 'edit-champion', component: ChampionEditComponent },
-  { path: '**', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent },
+  { path: 'login', component: LoginGoogleComponent }
 ];
