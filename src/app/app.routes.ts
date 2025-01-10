@@ -5,13 +5,14 @@ import { BorrarPersonajeComponent } from './pages/borrar-personaje/borrar-person
 import { ChampionEditComponent } from './champion-edit/champion-edit.component';
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import {LoginGoogleComponent} from "./components/login-google/login-google.component";
+import {AuthGuard} from "./guards/auth.guard";
 
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'hola-mundo', component: AnadirPersonajeComponent },
-  { path: 'borrar-personaje', component: BorrarPersonajeComponent },
-  { path: 'edit-champion', component: ChampionEditComponent },
+  { path: 'hola-mundo', component: AnadirPersonajeComponent, canActivate: [AuthGuard]},
+  { path: 'borrar-personaje', component: BorrarPersonajeComponent, canActivate: [AuthGuard] },
+  { path: 'edit-champion', component: ChampionEditComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent },
   { path: 'login', component: LoginGoogleComponent }
 ];
