@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Formulario de Sugerencias</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="suggestionForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label for="email">Introduce tu correo electrónico:</label>
+              <input type="email" id="email" class="form-control" formControlName="email"/>
+              <div *ngIf="suggestionForm.get('email')?.invalid && suggestionForm.get('email')?.touched"
+                   class="text-danger">
+                <small *ngIf="suggestionForm.get('email')?.hasError('required')">
+                  El correo es obligatorio.
+                </small>
+                <small *ngIf="suggestionForm.get('email')?.hasError('email')">
+                  Introduce un correo válido.
+                </small>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="subject">Introduce el asunto:</label>
+              <input type="text" id="subject" class="form-control" formControlName="subject"/>
+              <div *ngIf="suggestionForm.get('subject')?.invalid && suggestionForm.get('subject')?.touched"
+                   class="text-danger">
+                <small>El asunto es obligatorio.</small>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label for="message">¿Cuál es tu sugerencia?:</label>
+              <textarea id="message" class="form-control" rows="5" formControlName="message"></textarea>
+              <div *ngIf="suggestionForm.get('message')?.invalid && suggestionForm.get('message')?.touched"
+                   class="text-danger">
+                <small>El mensaje es obligatorio.</small>
+              </div>
+            </div>
+
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary w-100" [disabled]="suggestionForm.invalid">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
