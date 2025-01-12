@@ -6,6 +6,7 @@ import { ChampionEditComponent } from './champion-edit/champion-edit.component';
 import { NotFoundComponent } from "./pages/not-found/not-found.component";
 import {LoginGoogleComponent} from "./components/login-google/login-google.component";
 import {AuthGuard} from "./guards/auth.guard";
+import {SuggestionsFormComponent} from "./pages/suggestions-form/suggestions-form.component";
 
 
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
   { path: 'hola-mundo', component: AnadirPersonajeComponent, canActivate: [AuthGuard]},
   { path: 'borrar-personaje', component: BorrarPersonajeComponent, canActivate: [AuthGuard] },
   { path: 'edit-champion', component: ChampionEditComponent, canActivate: [AuthGuard] },
-  { path: '**', component: NotFoundComponent },
-  { path: 'login', component: LoginGoogleComponent }
+  { path: 'login', component: LoginGoogleComponent },
+  { path: 'suggestions-form', component: SuggestionsFormComponent },
+  { path: '**', component: NotFoundComponent }
 ];
