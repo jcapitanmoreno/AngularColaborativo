@@ -25,3 +25,25 @@ input {
   display: inline-block;
   width: 30%;
 }
+
+.card {
+  background-color: #1e1e2f; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  border: none; /* Elimina bordes por defecto */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la tarjeta */
+}
+
+.card .card-position {
+  color: #d1d1e0; /* Color más claro para el texto secundario */
+}
+
+.card button {
+  background-color: #ff4d4f; /* Botón rojo */
+  border-color: #ff4d4f; /* Borde del mismo color */
+}
+
+.card button:hover {
+  background-color: #e04344; /* Rojo más oscuro al pasar el ratón */
+}
+

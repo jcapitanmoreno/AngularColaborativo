@@ -1,0 +1,15 @@
+<div class="champion-card">
+
+  <div class="champion-image-container">
+    <img *ngIf="imageUrl; else errorTemplate" [src]="imageUrl" [alt]="championName" class="champion-image" />
+  </div>
+
+
+  <div class="champion-name">
+    <h2>{{ championName || 'Unknown Champion' }}</h2>
+  </div>
+
+  <ng-template #errorTemplate>
+    <p class="error-message">{{ errorMessage ?? 'Could not load image.' }}</p>
+  </ng-template>
+</div>

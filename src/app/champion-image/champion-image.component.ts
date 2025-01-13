@@ -18,22 +18,23 @@ export class ChampionImageComponent implements OnInit {
 
   constructor(private championService: ChampionService) {}
 
-  ngOnInit(): void {
-    this.fetchChampionImage();
-  }
+  async ngOnInit() {
+    if (!this.championName) {
+      this.errorMessage = 'Nombre del campeón no proporcionado.';
+      return;
+    }
 
-
-  private async fetchChampionImage(): Promise<void> {
     try {
-      const url = await this.championService.getChampionImageUrl(this.championName);
-      this.imageUrl = url;
+      this.imageUrl = await this.championService.getChampionSplashArtUrl(this.championName);
       this.errorMessage = null;
     } catch (error) {
-      this.imageUrl = null;
-      this.errorMessage = `No se encontró la imagen para "${this.championName}".`;
+      this.imageUrl = "/assets/images/markdown.png";
+      this.errorMessage = `No se pudo cargar la imagen para "${this.championName}".`;
       console.error('Error al obtener la imagen del campeón:', error);
     }
   }
+
+
 
 
 }

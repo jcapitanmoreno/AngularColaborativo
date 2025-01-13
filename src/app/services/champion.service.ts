@@ -53,14 +53,14 @@ export class ChampionService {
 
 
   setChampion(champion: Champion) {
-    this.championSubject.next(champion);  // Almacena el champion
+    this.championSubject.next(champion);
   }
 
   getChampionFromService(): Observable<Champion | null> {
-    return this.champion$;  // Devuelve el Observable
+    return this.champion$;
   }
 
-  async getChampionImageUrl(championName: string): Promise<string> {
+  async getChampionSplashArtUrl(championName: string): Promise<string> {
     try {
 
       const response = await fetch(this.apiUrl);
@@ -69,11 +69,7 @@ export class ChampionService {
       if (!response.ok) {
         throw new Error('Error en la solicitud al servidor');
       }
-
-
       const data: ApiResponse = await response.json();
-
-
       const championId = Object.keys(data.data).find(
         key => data.data[key].name.toLowerCase() === championName.toLowerCase()
       );
@@ -89,6 +85,9 @@ export class ChampionService {
       throw new Error('Hubo un error al conectarse con el servidor.');
     }
   }
+
+
+
 
 
 }

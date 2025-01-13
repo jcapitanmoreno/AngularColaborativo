@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ChampionService } from '../../services/champion.service';
 import { Champion } from '../../models/champion';
+import {ChampionSectionAddComponent} from "../../champion-section-add/champion-section-add.component";
 
 @Component({
   selector: 'app-anadir-personaje',
   standalone: true,
   templateUrl: './anadir-personaje.component.html',
   styleUrl: './anadir-personaje.component.css',
-  imports: [ReactiveFormsModule]
+  imports: [ReactiveFormsModule, ChampionSectionAddComponent]
 })
 export class AnadirPersonajeComponent {
   championForm: FormGroup;
