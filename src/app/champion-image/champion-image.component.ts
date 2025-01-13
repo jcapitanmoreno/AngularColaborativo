@@ -18,14 +18,19 @@ export class ChampionImageComponent implements OnInit {
 
   constructor(private championService: ChampionService) {}
 
-  ngOnInit(): void {
-    this.fetchChampionImage();
+  async ngOnInit() {
+    try {
+      this.imageUrl = await this.championService.getChampionSplashArtUrl(this.championName);
+      console.log('URL de la Splash Art:', this.imageUrl);  // Verifica la URL generada
+    } catch (error) {
+      console.error('Error al obtener la imagen:', error);
+    }
   }
 
 
   private async fetchChampionImage(): Promise<void> {
     try {
-      const url = await this.championService.getChampionImageUrl(this.championName);
+      const url = await this.championService.getChampionSplashArtUrl(this.championName);
       this.imageUrl = url;
       this.errorMessage = null;
     } catch (error) {

@@ -60,7 +60,7 @@ export class ChampionService {
     return this.champion$;  // Devuelve el Observable
   }
 
-  async getChampionImageUrl(championName: string): Promise<string> {
+  async getChampionSplashArtUrl(championName: string): Promise<string> {
     try {
 
       const response = await fetch(this.apiUrl);
@@ -89,6 +89,9 @@ export class ChampionService {
       throw new Error('Hubo un error al conectarse con el servidor.');
     }
   }
+
+
+
 
 
 }

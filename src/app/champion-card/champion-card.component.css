@@ -1,4 +1,66 @@
-.custom-card {
-    width: 20rem;
-    margin: 0 auto; 
+.card {
+  background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
+  border-radius: 12px;
+  border: 3px solid #f8f8f8;
+  box-shadow: 0 4px 12px rgba(0.6, 0, 0, 0.9);
+  max-width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-position {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #ffffff;
+  text-align: left;
+}
+
+.card-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 16px;
+  color: white;
+  background-color: #000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-transform: capitalize;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-title:hover {
+  background-color: #333; /* Cambio de color de fondo a un gris oscuro cuando se pasa el ratón */
+}
+
+app-champion-image img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+  height: 200px; /* Altura fija para la imagen */
+  object-fit: cover; /* Recorta la imagen para que se ajuste bien */
+  border-bottom: 4px solid #f1f1f1; /* Línea que separa la imagen de los detalles */
+}
+
+@media (max-width: 600px) {
+  .card {
+    max-width: 100%; /* Para pantallas pequeñas, la tarjeta ocupará todo el ancho */
   }
+  .card-details {
+    padding: 12px; /* Menos padding en pantallas pequeñas */
+  }
+  .card-position {
+    font-size: 12px; /* Texto más pequeño en pantallas pequeñas */
+  }
+}

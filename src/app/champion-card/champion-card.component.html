@@ -1,7 +1,13 @@
 <div class="card" style="cursor: pointer;" (click)="editChampion(champion)">
-  <h3>{{ champion.nombre }}</h3>
-  <p>{{ champion.posicion }}</p>
-  <p>{{ champion.region }}</p>
-
   <app-champion-image [championName]="champion.nombre"></app-champion-image>
+
+  <div class="card-details">
+    <p class="card-position"><strong>Especie:</strong> {{ champion.especie }}</p>
+    <p class="card-position"><strong>Posición:</strong> {{ champion.posicion }}</p>
+    <p class="card-position"><strong>Género:</strong> {{ champion.genero }}</p>
+    <p class="card-position"><strong>Año de lanzamiento:</strong> {{ champion.anoLanzamiento }}</p>
+    <p class="card-position"><strong>Recurso:</strong> {{ champion.recurso }}</p>
+    <h3 class="card-title">{{ champion.nombre }}</h3>
+  </div>
 </div>
+
