@@ -21,7 +21,7 @@ export class AuthService {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(this.auth, provider)
       .then(() => {
-        this.router.navigate(['/']); // Redirigir al listado después del login
+        this.router.navigate(['/']);
       })
       .catch((error) => {
         console.error('Error al iniciar sesión con Google:', error);

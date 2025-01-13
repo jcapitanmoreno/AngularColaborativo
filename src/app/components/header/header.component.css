@@ -1,0 +1,22 @@
+
+.navbar {
+  position: static;
+  z-index: 1;
+  width: 100%;
+}
+
+
+body {
+  margin-top: 20px;
+}
+
+
+.container {
+  margin-top: 20px;
+}
+
+.nav-link:hover {
+  color: #f8f9fa !important;
+  background-color: #343a40;
+  border-radius: 4px;
+}

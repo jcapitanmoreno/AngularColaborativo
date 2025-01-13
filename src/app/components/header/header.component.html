@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Angular FCT</a>
+    <a class="navbar-brand text-white" href="#">WIKI LOL</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,32 +16,31 @@
       <ul class="navbar-nav">
         <li class="nav-item" routerLinkActive="active">
           <a
-            class="nav-link"
-            [routerLink]="['/']"
+            class="nav-link text-white"
+            [routerLink]="['/champion-list']"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             aria-current="page"
-          >Todos los campeones</a
-          >
+          >Todos los campeones</a>
         </li>
         <li class="nav-item" routerLinkActive="active">
           <a
-            class="nav-link"
+            class="nav-link text-white"
             [routerLink]="['/hola-mundo']"
             routerLinkActive="active"
-          >Añadir personaje</a
-          >
+          >Añadir personaje</a>
         </li>
         <li class="nav-item">
           <a
-            class="nav-link"
+            class="nav-link text-white"
             [routerLink]="['/borrar-personaje']"
             routerLinkActive="active"
-          >Borrar personaje</a
-          >
+          >Borrar personaje</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/suggestions-form']" routerLinkActive="active">Enviar sugerencia</a>
+          <a class="nav-link text-white" [routerLink]="['/suggestions-form']"
+             routerLinkActive="active"
+          >Enviar sugerencia</a>
         </li>
       </ul>
     </div>

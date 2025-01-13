@@ -1,0 +1,22 @@
+.access-denied-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 50px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #d9534f;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+}

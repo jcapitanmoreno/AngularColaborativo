@@ -5,6 +5,7 @@ import { Champion } from '../models/champion';
 import { ChampionCardComponent } from '../champion-card/champion-card.component';
 import {PlaceholderComponent} from "../placeholder/placeholder.component";
 import {NoDataMessageComponent} from "../no-data-message/no-data-message.component";
+import {ChampionSectionComponent} from "../champion-section/champion-section.component";
 
 
 
@@ -13,7 +14,7 @@ import {NoDataMessageComponent} from "../no-data-message/no-data-message.compone
   standalone: true,
   templateUrl: './champion-list.component.html',
   styleUrls: ['./champion-list.component.css'],
-  imports: [CommonModule, ChampionCardComponent, PlaceholderComponent, NoDataMessageComponent],
+  imports: [CommonModule, ChampionCardComponent, PlaceholderComponent, NoDataMessageComponent, ChampionSectionComponent],
 })
 
 export class ChampionListComponent implements OnInit {

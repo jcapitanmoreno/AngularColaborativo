@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { NotificationComponent } from '../../components/notification/notification.component';
 
 @Component({
   selector: 'app-login-google',
   standalone: true,
-  imports: [CommonModule, NotificationComponent],
+  imports: [CommonModule, NotificationComponent, NgOptimizedImage],
   templateUrl: './login-google.component.html',
   styleUrls: ['./login-google.component.css']
 })

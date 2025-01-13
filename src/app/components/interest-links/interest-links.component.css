@@ -1,0 +1,30 @@
+.interest-links a {
+  font-size: 1.1rem;
+  color: white; /* Letras blancas */
+  font-weight: bold; /* Letras en negrita */
+  transition: color 0.3s ease;
+}
+
+
+.interest-links a:hover {
+  color: #007bff; /* Color azul claro al pasar el ratón */
+  text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+}
+
+
+.interest-links {
+  padding: 20px;
+  background-color: #343a40; /* Gris oscuro */
+  border-radius: 8px;
+}
+
+
+
+.interest-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.interest-links li {
+  margin: 10px 0;
+}
