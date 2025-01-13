@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { NotificationComponent } from '../../components/notification/notification.component';
+import {user} from "@angular/fire/auth";
 
 @Component({
   selector: 'app-login-google',
@@ -21,4 +22,6 @@ export class LoginGoogleComponent {
       this.errorMessage = error.message;
     });
   }
+
+  protected readonly user = user;
 }
