@@ -1,0 +1,112 @@
+
+.hero-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 35%;
+  object-fit: cover;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.google-icon {
+  margin-right: 10px;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+
+
+}
+
+.login-btn {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 30px;
+  background-color: white;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.login-btn:hover {
+  background-color: #333;
+  color: white;
+  border: 2px solid #fff;
+}
+
+
+.text-center {
+  margin-bottom: 30px;
+}
+
+
+
+h1, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+
+p.text-muted {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  color: #d1d1d1;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+
+footer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  color: #a6a6a6;
+}
+
+footer a {
+  color: #a6a6a6;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

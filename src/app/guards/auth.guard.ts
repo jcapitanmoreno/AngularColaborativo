@@ -12,10 +12,9 @@ export class AuthGuard implements CanActivate {
     const user = this.auth.currentUser;
 
     if (!user) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/access-denied']);
       return false;
     }
-
     return true;
   }
 }

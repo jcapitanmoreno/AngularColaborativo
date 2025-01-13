@@ -1,0 +1,26 @@
+.champion-section {
+  font-family: 'Arial', sans-serif;
+  color: #111; /* Color oscuro para el texto */
+  margin: 20px auto;
+}
+
+.subtitle {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #111;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}

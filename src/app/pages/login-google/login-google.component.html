@@ -1,0 +1,35 @@
+<section class="hero-section mt-5">
+
+  <section class="text-center">
+    <h1 class="display-1">Bienvenido a Wiki-League</h1>
+    <h4 class="display-3">¿Qué es Wiki-League?</h4>
+
+
+    <p class="text-muted lead">Esta es una wiki no oficial de League of Legends, el juego de batalla en línea multijugador desarrollado por Riot Games,
+      y otros juegos del universo de Runeterra.</p>
+    <p class="text-muted lead">Accede a nuestra plataforma para disfrutar de todas las funcionalidades que ofrece la página,
+      y poder contribuir a la comunidad de este juego.</p>
+
+  </section>
+
+
+  <div class="hero-image-container">
+    <img src="assets/images/Lilia.jpg" alt="Imagen principal" class="img-fluid hero-image"/>
+
+
+    <button class="btn btn-light btn-lg login-btn" (click)="loginWithGoogle()" style="gap: 10px;">
+      <i class="bi bi-google google-icon"></i>
+      <span>Iniciar Sesión con Google</span>
+    </button>
+
+    <div class="footer-container">
+      <p>Al continuar, aceptas nuestros <a href="/terms">Términos de Servicio</a> y <a href="/privacy">Política de Privacidad</a>.</p>
+    </div>
+
+
+  </div>
+
+  <div class="mt-3">
+    <app-notification *ngIf="errorMessage" [alertClass]="'danger'" [alertMessage]="errorMessage"></app-notification>
+  </div>
+</section>

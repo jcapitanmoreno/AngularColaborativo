@@ -1,4 +1,9 @@
 /* styles.css */
+
+form {
+  margin-top: 7%; /* Ajusta este valor según lo que necesites */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
