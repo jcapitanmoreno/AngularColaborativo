@@ -5,89 +5,89 @@
 }
 
 .form-container {
-  background: linear-gradient(to right, #000000, #0a0a40); /* Gradiente negro a azul oscuro */
+  background: linear-gradient(to right, #000000, #0a0a40);
   padding: 32px;
   border-radius: 8px;
-  max-width: 800px; /* Aumentamos el ancho para las dos columnas */
+  max-width: 800px;
   margin: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo de la estructura en dos columnas */
+
 .form-row {
-  display: flex; /* Utilizamos Flexbox para las columnas */
-  justify-content: space-between; /* Espaciado entre las columnas */
-  margin-bottom: 16px; /* Separación entre filas */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
 }
 
-/* Añadir separación horizontal entre columnas */
+
 .col-md-6 {
-  padding-right: 20px; /* Añadir margen a la derecha */
+  padding-right: 20px;
 }
 
 .col-md-6:last-child {
-  padding-right: 0; /* Sin margen en la última columna */
+  padding-right: 0;
 }
 
-/* Estilo de las etiquetas */
+
 label {
-  color: #fff; /* Etiquetas blancas */
+  color: #fff;
   font-size: 1.1rem;
-  font-weight: bold; /* Negrita */
+  font-weight: bold;
   margin-bottom: 8px;
-  display: block; /* Asegura que las etiquetas se ubiquen arriba de los campos */
+  display: block;
 }
 
-/* Estilo de los campos de texto con tamaño fijo */
+
 input[type="text"],
 input[type="number"],
 textarea {
-  background-color: #fff; /* Fondo blanco */
-  color: #333; /* Color de texto oscuro */
-  border: 2px solid #ccc; /* Borde gris suave */
-  border-radius: 8px; /* Bordes redondeados */
-  padding: 12px; /* Espaciado dentro de los campos */
-  width: 100%; /* Campos ocupan todo el ancho de su contenedor */
-  height: 40px; /* Tamaño fijo en altura */
-  font-size: 1rem; /* Tamaño de texto */
-  flex: 0 0 100%; /* Los campos ocupan el 100% del ancho */
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  flex: 0 0 100%;
   margin-bottom: 20px;
 }
 
-/* Estilo del botón de envío */
+
 button {
-  background-color: #ffd700; /* Fondo dorado para el botón */
-  color: #fff; /* Texto blanco */
-  border: none; /* Sin bordes */
-  padding: 12px 24px; /* Espaciado dentro del botón */
-  border-radius: 8px; /* Bordes redondeados */
+  background-color: #ffd700;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
-/* Efecto hover del botón */
+
 button:hover {
-  background-color: #e6c200; /* Cambio de color a dorado más oscuro */
+  background-color: #e6c200;
 }
 
-/* Mensajes de error */
+
 .error-message {
   color: red;
   font-style: italic;
   margin-top: 8px;
 }
 
-/* Aseguramos que el formulario sea responsivo */
+
 @media (max-width: 768px) {
   .form-row {
-    flex-direction: column; /* En pantallas pequeñas, los campos se apilan en una sola columna */
+    flex-direction: column;
   }
 
   label,
   input[type="text"],
   input[type="number"],
   textarea {
-    flex: 0 0 100%; /* Los campos ocupan el 100% del ancho */
+    flex: 0 0 100%;
   }
 }

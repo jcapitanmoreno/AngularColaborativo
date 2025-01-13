@@ -34,28 +34,28 @@
 }
 
 .subtitle {
-  font-size: 1.2rem; /* Aumentado ligeramente de 1rem */
+  font-size: 1.2rem;
   letter-spacing: 2px;
   font-weight: bold;
   text-transform: uppercase;
   color: #111;
   margin-bottom: 60px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil al texto */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .title {
-  font-size: 3.5rem; /* Aumentado proporcionalmente de 3rem */
+  font-size: 3.5rem;
   font-weight: bold;
   color: #111;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra un poco más pronunciada */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .description {
-  font-size: 1.2rem; /* Aumentado ligeramente de 1rem */
+  font-size: 1.2rem;
   color: #333;
   line-height: 1.5;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil para el cuerpo del texto */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 

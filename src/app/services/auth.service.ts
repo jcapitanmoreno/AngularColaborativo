@@ -10,13 +10,12 @@ export class AuthService {
   private userSubject = new BehaviorSubject<User | null>(null);
 
   constructor(private auth: Auth, private router: Router) {
-    // Escucha los cambios en el estado de autenticación
+
     onAuthStateChanged(this.auth, (user) => {
-      this.userSubject.next(user); // Actualiza el usuario en el observable
+      this.userSubject.next(user);
     });
   }
 
-  // Iniciar sesión con Google
   loginWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(this.auth, provider)
@@ -29,14 +28,12 @@ export class AuthService {
       });
   }
 
-  // Cerrar sesión
   logout(): Promise<void> {
     return signOut(this.auth).then(() => {
-      this.router.navigate(['/']); // Redirigir a la portada después del logout.
+      this.router.navigate(['/']);
     });
   }
 
-  // Obtener el usuario autenticado actualmente
   getUser(): Observable<User | null> {
     return this.userSubject.asObservable();
   }

@@ -1,10 +1,10 @@
 <div class="card-container">
   <div *ngIf="imageUrl; else errorTemplate">
-    <!-- Mostrar la imagen si está disponible -->
+
     <img [src]="imageUrl" [alt]="championName" class="card-image" />
   </div>
   <ng-template #errorTemplate>
-    <!-- Mostrar mensaje de error si no se encuentra la imagen -->
+    <
     <p class="text-danger">{{ errorMessage }}</p>
   </ng-template>
 </div>

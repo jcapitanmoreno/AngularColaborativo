@@ -5,6 +5,7 @@ import {Champion} from '../models/champion';
 import {PlaceholderComponent} from "../placeholder/placeholder.component";
 import {NoDataMessageComponent} from "../no-data-message/no-data-message.component";
 import {ChampionImageComponent} from "../champion-image/champion-image.component";
+import {ChampionImageEditComponent} from "../champion-image-edit/champion-image-edit.component";
 
 
 @Component({
@@ -12,7 +13,7 @@ import {ChampionImageComponent} from "../champion-image/champion-image.component
   standalone: true,
   templateUrl: './delete-champion-list.component.html',
   styleUrl: './delete-champion-list.component.css',
-  imports: [CommonModule, PlaceholderComponent, NoDataMessageComponent, ChampionImageComponent]
+  imports: [CommonModule, PlaceholderComponent, NoDataMessageComponent, ChampionImageComponent, ChampionImageEditComponent]
 })
 export class DeleteChampionListComponent {
   champions: Champion[] = [];

@@ -28,7 +28,7 @@ export class ChampionImageComponent implements OnInit {
       this.imageUrl = await this.championService.getChampionSplashArtUrl(this.championName);
       this.errorMessage = null;
     } catch (error) {
-      this.imageUrl = null;
+      this.imageUrl = "/assets/images/markdown.png";
       this.errorMessage = `No se pudo cargar la imagen para "${this.championName}".`;
       console.error('Error al obtener la imagen del campeón:', error);
     }

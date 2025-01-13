@@ -12,9 +12,9 @@ export class EmailService {
 
   async sendEmail(email: string, subject: string, message: string) {
     const templateParams = {
-      user_email: email,    // Correo del usuario
-      subject: subject,     // Asunto del correo
-      message: message      // Mensaje del correo
+      user_email: email,
+      subject: subject,
+      message: message
     };
 
     try {

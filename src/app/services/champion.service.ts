@@ -53,11 +53,11 @@ export class ChampionService {
 
 
   setChampion(champion: Champion) {
-    this.championSubject.next(champion);  // Almacena el champion
+    this.championSubject.next(champion);
   }
 
   getChampionFromService(): Observable<Champion | null> {
-    return this.champion$;  // Devuelve el Observable
+    return this.champion$;
   }
 
   async getChampionSplashArtUrl(championName: string): Promise<string> {
@@ -69,11 +69,7 @@ export class ChampionService {
       if (!response.ok) {
         throw new Error('Error en la solicitud al servidor');
       }
-
-
       const data: ApiResponse = await response.json();
-
-
       const championId = Object.keys(data.data).find(
         key => data.data[key].name.toLowerCase() === championName.toLowerCase()
       );
