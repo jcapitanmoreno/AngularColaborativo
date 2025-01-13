@@ -1,18 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ChampionService } from "../services/champion.service";
-
+import { Component, Input, OnInit } from '@angular/core';
+import { ChampionService } from '../services/champion.service';
+import {CommonModule} from "@angular/common";
 
 @Component({
-  selector: 'app-champion-image',
+  selector: 'app-champion-image-edit',
+  templateUrl: './champion-image-edit.component.html',
+  styleUrls: ['./champion-image-edit.component.css'],
   standalone: true,
-  templateUrl: './champion-image.component.html',
-  styleUrls: ['./champion-image.component.css'],
   imports: [CommonModule],
   providers: [ChampionService],
 })
-export class ChampionImageComponent implements OnInit {
-  @Input() championName!: string;
+export class ChampionImageEditComponent implements OnInit {
+  @Input() championName: string = '';
   imageUrl: string | null = null;
   errorMessage: string | null = null;
 
@@ -33,8 +32,4 @@ export class ChampionImageComponent implements OnInit {
       console.error('Error al obtener la imagen del campeón:', error);
     }
   }
-
-
-
-
 }

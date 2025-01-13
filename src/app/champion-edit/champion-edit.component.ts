@@ -5,13 +5,16 @@ import { ChampionService } from '../services/champion.service';
 import { Router } from '@angular/router';
 import {NgIf} from "@angular/common";
 import {catchError, of, tap} from "rxjs";
+import {ChampionImageComponent} from "../champion-image/champion-image.component";
+import {ChampionImageEditComponent} from "../champion-image-edit/champion-image-edit.component";
+import {ChampionSectionEditComponent} from "../champion-section-edit/champion-section-edit.component";
 
 @Component({
   selector: 'app-champion-edit',
   templateUrl: './champion-edit.component.html',
   styleUrls: ['./champion-edit.component.css'],
   standalone: true,
-  imports: [FormsModule, NgIf]
+  imports: [FormsModule, NgIf, ChampionImageComponent, ChampionImageEditComponent, ChampionSectionEditComponent]
 })
 export class ChampionEditComponent implements OnInit {
   champion: Champion | null = null;
