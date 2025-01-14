@@ -1,3 +1,47 @@
+.image-container {
+  margin: 20px auto;
+  max-width: 400px; /* Ancho máximo de la imagen */
+  border: 3px solid #8a2be2; /* Borde morado elegante */
+  border-radius: 12px; /* Esquinas redondeadas */
+  overflow: hidden; /* Para que la imagen no sobresalga */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.image-container img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantener la proporción */
+}
+
+.custom-btn {
+  background-color: #8a2be2; /* Color morado elegante */
+  color: #fff; /* Texto blanco para buen contraste */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Esquinas redondeadas */
+  padding: 12px 24px; /* Espaciado interno */
+  font-size: 1.2rem; /* Tamaño del texto */
+  font-weight: bold; /* Texto más visible */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: all 0.3s ease; /* Animación de transición */
+}
+
+.custom-btn:hover {
+  background-color: #6a1db5; /* Color morado más oscuro al pasar el cursor */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Aumentar sombra */
+  transform: translateY(-2px); /* Efecto de elevación */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.custom-btn:focus {
+  outline: none; /* Eliminar borde al enfocarse */
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.4); /* Resaltado con sombra */
+}
+
+.custom-btn i {
+  margin-right: 8px; /* Separación entre el icono y el texto */
+}
+
+
+
 .container {
   max-width: 600px;
 }
@@ -8,12 +52,13 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
-  color: #6c757d;
+  font-size: 3.5rem;
+  color: #ffffff;
+
 }
 
 p {
-  color: #495057;
+  color: #ffffff;
 }
 
 .btn i {
