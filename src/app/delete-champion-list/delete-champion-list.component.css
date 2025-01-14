@@ -102,7 +102,7 @@ input {
 }
 
 .card button:hover {
-  background-color: #e04344; /* Rojo más oscuro al pasar el ratón */
+  background-color: #e04344; 
 }
 
 .modal-content {
@@ -111,17 +111,23 @@ input {
 }
 
 .modal-header {
-  background-color: #007bff; /* Fondo azul */
-  color: #fff; /* Texto blanco */
+  background-color: #26263a; 
+  color: #fff; 
 }
 
 .modal-body {
-  background-color: #e9ecef; /* Fondo gris claro */
-  color: #495057; /* Texto gris oscuro */
+  background-color: #adadad;
+  color: #495057; 
+  margin-bottom: 15px;
+}
+
+.modal-body app-champion-image {
+  margin-top: 10px; 
+  display: block; 
 }
 
 .modal-footer {
-  background-color: #f8f9fa; /* Fondo claro */
+  background-color: #adadad; 
   border-top: 1px solid #dee2e6;
 }
 
@@ -139,7 +145,7 @@ input {
 }
 
 .btn-danger {
-  background-color: #dc3545;
+  background-color: #000000;
   border: none;
 }
 

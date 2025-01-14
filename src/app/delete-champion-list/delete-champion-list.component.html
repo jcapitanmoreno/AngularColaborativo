@@ -43,18 +43,19 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content shadow-lg">
 
-            <div class="modal-header bg-danger text-white">
+            <div class="modal-header text-white">
               <h5 class="modal-title" [attr.id]="'deleteModalLabel' + champion.id">
                 Eliminar al campeón: {{ champion.nombre }}?
               </h5>
               <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <div class="modal-body bg-light text-dark">
+            <div class="modal-body text-dark">
               <p class="mb-0">¿Seguro que quieres eliminar al campeón <strong>{{ champion.nombre }}</strong>?</p>
+              <app-champion-image [championName]="champion.nombre"></app-champion-image>
             </div>
 
-            <div class="modal-footer bg-light">
+            <div class="modal-footer ">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteChampion(champion)">
                 Eliminar
