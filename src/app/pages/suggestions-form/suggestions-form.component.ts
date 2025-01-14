@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from "@angular/common";
 import { EmailService } from "../../services/email.service";
+import {ChampionSectionFormComponent} from "../../champion-section-form/champion-section-form.component";
 
 @Component({
     selector: 'app-suggestions-form',
     standalone: true,
     templateUrl: './suggestions-form.component.html',
     styleUrls: ['./suggestions-form.component.css'],
-    imports: [ReactiveFormsModule, NgIf]
+  imports: [ReactiveFormsModule, NgIf, ChampionSectionFormComponent]
 })
 export class SuggestionsFormComponent {
     suggestionForm: FormGroup;
