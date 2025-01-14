@@ -5,10 +5,11 @@
   color: #6c757d;
 }
 
-.no-data-icon {
-  font-size: 4rem;
-  color: #adb5bd;
-  margin-bottom: 1rem;
+.no-data-gif {
+  width: 400px; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
 }
 
 .no-data-text {
